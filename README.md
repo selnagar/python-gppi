@@ -4,14 +4,12 @@ A python-based gPPI (generalized psychophysiological interaction) first-level an
 implemented in Python using Nilearn and NiBabel.
 
 ## Overview 
-
 This repository implements a first-level gPPI pipeline that:
 
 - Defines seed regions of interest and extracts confound-cleaned seed time series.
-- Constructs PPI interaction regressors (phys × psych) using ridge regression deconvultion.
+- Constructs PPI interaction regressors (phys × psych) using ridge regression deconvultion on the physiological regressor.
 - Fits a voxel-wise GLM to each run and saves beta (effect-size) maps for psychological, physiological, and PPI (interaction) regressors.
-
-## Analysis details 
+- Output can be used to run gPPI–ROI or whole brain analysis on the second level 
 
 **Main regressors:**
 1. Psychological — event regressors (convolved with HRF)
@@ -20,26 +18,12 @@ This repository implements a first-level gPPI pipeline that:
 4. Confounds — motion and physiological confounds from fMRIPrep
 
 **Implementation notes:**
-- The pipeline uses `nilearn.glm.FirstLevelModel` for model fitting and `make_first_level_design_matrix` to assemble regressors.
-- A deconvolution helper ([from IHB-IBR](https://github.com/IHB-IBR-department/BOLD_deconvolution)) is used to obtain neuronal estimates from seed time series before forming PPI interaction terms.
+- The pipeline uses `nilearn.glm.FirstLevelModel` for model fitting and `make_first_level_design_matrix` to assemble regressors across runs.
+- A deconvolution helper ([from IHB-IBR](https://github.com/IHB-IBR-department/BOLD_deconvolution)) is used to obtain neuronal estimates from seed time series before forming PPI interaction terms. Make sure to have this.
 - Default constants (such as `TR`, `SEEDS`, and participant lists) are set in `python_gppi/main.py` and must be adapted for your dataset.
+- The script expects fMRIPrep outputs and per-run `events_files` CSVs in the Nilearn's formatting, as described in the code.
 
-## Quickstart — run the analysis 
-
-Install dependencies (examples):
-
-```bash
-# with uv (recommended in this repo)
-uv run python_gppi/main.py
-```
-Alternatively, use your standard pip/conda workflow.
-
-Before running, edit `python_gppi/main.py` to adjust file paths and constants
-(e.g., `FMRIPREP_ROOT`, `ROI_DIR`, `TESTS`, `PARTICIPANTS`). The script expects
-fMRIPrep outputs and per-run `events_files` CSVs as described in the code.
-
-### Some resources I used for writing this script
-
+### Some helpful gPPI resources
 - BOLD deconvolution library used for deconvolution step:
   https://github.com/IHB-IBR-department/BOLD_deconvolution
 - Dartbrains connectivity tutorial: https://dartbrains.org/content/Connectivity.html
