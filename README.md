@@ -38,12 +38,13 @@ Before running, edit `python_gppi/main.py` to adjust file paths and constants
 (e.g., `FMRIPREP_ROOT`, `ROI_DIR`, `TESTS`, `PARTICIPANTS`). The script expects
 fMRIPrep outputs and per-run `events_files` CSVs as described in the code.
 
-## References & Resources 
+## Helpful Resources 
 
-- Dartbrains connectivity: https://dartbrains.org/content/Connectivity.html
-- Mumford gPPI videos: https://www.youtube.com/watch?v=M8APlF6oBgA
-- SPM manual: https://www.fil.ion.ucl.ac.uk/spm/doc/spm12_manual.pdf
 - BOLD deconvolution library used for deconvolution step:
   https://github.com/IHB-IBR-department/BOLD_deconvolution
+- Dartbrains connectivity tutorial: https://dartbrains.org/content/Connectivity.html
+- Mumford (g)PPI videos: https://www.youtube.com/watch?v=M8APlF6oBgA
+- SPM manual: https://www.fil.ion.ucl.ac.uk/spm/doc/spm12_manual.pdf
+
 
 
