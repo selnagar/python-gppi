@@ -38,7 +38,7 @@ Before running, edit `python_gppi/main.py` to adjust file paths and constants
 (e.g., `FMRIPREP_ROOT`, `ROI_DIR`, `TESTS`, `PARTICIPANTS`). The script expects
 fMRIPrep outputs and per-run `events_files` CSVs as described in the code.
 
-## Helpful Resources 
+### Some resources I used for writing this script
 
 - BOLD deconvolution library used for deconvolution step:
   https://github.com/IHB-IBR-department/BOLD_deconvolution
