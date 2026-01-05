@@ -1,7 +1,7 @@
 # python-gppi
 
 A python-based gPPI (generalized psychophysiological interaction) first-level analysis
-implemented in Python using Nilearn, NiBabel, and scikit-learn.
+implemented in Python using Nilearn and NiBabel.
 
 ## Overview 
 
