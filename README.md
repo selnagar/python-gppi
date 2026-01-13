@@ -1,6 +1,6 @@
 # python-gppi
 
-A python-based gPPI (generalized psychophysiological interaction) first-level analysis
+A custom made gPPI (generalized psychophysiological interaction) first-level analysis
 implemented in Python.
 
 ## Overview 
